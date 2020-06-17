@@ -29,15 +29,19 @@ ureq = { version = "1.2", default_features = false, features = ["json", "tls"] }
 version = "3"
 
 [dependencies.iced]
-version = "0.1.1"
+# version = "0.1.1"
+git = "https://github.com/hecrj/iced.git"
+branch = "master"
 default_features = false
-features = ["image"]
+features = ["wgpu"]
 # TODO: consider features = ["async-std"]
 
 [dev-dependencies.iced]
-version = "0.1.1"
+#version = "0.1.1"
+git = "https://github.com/hecrj/iced.git"
+branch = "master"
 default_features = false
-features = ["debug", "image"]
+features = ["debug", "wgpu"]
 
 [target.'cfg(windows)'.build-dependencies]
 winres = "0.1"

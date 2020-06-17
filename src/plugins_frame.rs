@@ -2,8 +2,9 @@ use crate::{style, Message};
 
 use espim::Plugin as EspimPlugin;
 use iced::{
-    button, image, scrollable, Align, Color, Column, Command, Container, Element, Image, Length,
-    Row, Scrollable, Space, Text, VerticalAlignment,
+    button, /*image,*/ scrollable, Align, Color, Column, Command, Container,
+    Element, /*Image,*/
+    Length, Row, Scrollable, Space, Text, VerticalAlignment,
 };
 
 #[derive(Debug, Clone)]
@@ -127,12 +128,11 @@ impl Plugin {
             content = content.push(
                 Row::new()
                     .width(Length::Units(ICON_DIMENSION))
-                    .align_items(Align::Center)
-                    .push(
-                        Image::new(image::Handle::from_memory(bytes.clone())) // Not ideal, clones a couple KB every rendering pass
-                            .height(Length::Units(ICON_DIMENSION))
-                            .width(Length::Units(ICON_DIMENSION)),
-                    ),
+                    .align_items(Align::Center), /*.push(
+                                                     Image::new(image::Handle::from_memory(bytes.clone())) // Not ideal, clones a couple KB every rendering pass
+                                                         .height(Length::Units(ICON_DIMENSION))
+                                                         .width(Length::Units(ICON_DIMENSION)),
+                                                 ),*/
             );
         }
 
