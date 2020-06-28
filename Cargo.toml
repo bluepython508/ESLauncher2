@@ -1,6 +1,6 @@
 [package]
 name = "eslauncher2"
-version = "0.4.4"
+version = "0.4.5"
 authors = ["M*C*O <mcofficer@gmx.de>"]
 edition = "2018"
 build = "build.rs"
@@ -10,7 +10,7 @@ anyhow = "1.0"
 bitar = { version="0.7.0", features=["rustls-tls"] }
 chrono = { version = "0.4", features = ["serde"] }
 dmg = "0.1.1"
-espim = { path="espim" }
+espim = "0.1"
 flate2 = "1.0"
 fs_extra = "1.1.0"
 futures = "0.3"
@@ -25,15 +25,16 @@ serde-xml-rs = "0.4"
 simplelog = "0.8.0"
 tar = "0.4"
 tokio = { version="0.2", default_features = false, features=["fs"] }
-ureq = { version = "1.2", default_features = false, features = ["json", "tls"] }
+ureq = { version = "1.3", default_features = false, features = ["json", "tls"] }
 version = "3"
+zip-extract = { version = "0.1.0", default_features = false, features = ["deflate"] }
 
 [dependencies.iced]
 # version = "0.1.1"
 git = "https://github.com/hecrj/iced.git"
 branch = "master"
 default_features = false
-features = ["wgpu"]
+features = ["glow"]
 # TODO: consider features = ["async-std"]
 
 [dev-dependencies.iced]
@@ -41,7 +42,7 @@ features = ["wgpu"]
 git = "https://github.com/hecrj/iced.git"
 branch = "master"
 default_features = false
-features = ["debug", "wgpu"]
+features = ["debug", "glow"]
 
 [target.'cfg(windows)'.build-dependencies]
 winres = "0.1"
